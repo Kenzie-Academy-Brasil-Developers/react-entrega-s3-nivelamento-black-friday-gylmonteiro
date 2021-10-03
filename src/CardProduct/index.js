@@ -1,20 +1,23 @@
+import { Button } from "@material-ui/core";
+import { ContainerProductDiscount } from "./styles";
 const CardProduct = ({ product, setCurrentSale, currentSale, discount }) => {
+  const itemDiscount = Number(
+    (product.price - product.price * (discount * 0.01)).toFixed(2)
+  );
+
   return (
-    <div>
+    <ContainerProductDiscount>
       <h1>{product.name}</h1>
-      <p>R${product.price.toFixed(2)}</p>
-      <p>
-        Desconto = {discount}% -- R$
-        {(-1 * (product.price * discount * 0.01 - product.price)).toFixed(2)}
-      </p>
+      <p>R$ {product.price.toFixed(2)}</p>
+      <p>Desconto de {discount}% </p>
       <p>
         Valor com o desconto = R$
-        {(
-          product.price +
-          (product.price * discount * 0.01 - product.price)
-        ).toFixed(2)}
+        {(product.price - product.price * (discount * 0.01)).toFixed(2)}
       </p>
-      <button
+      <Button
+        color="secondary"
+        variant="contained"
+        size="medium"
         onClick={() =>
           setCurrentSale([
             ...currentSale,
@@ -23,13 +26,14 @@ const CardProduct = ({ product, setCurrentSale, currentSale, discount }) => {
               name: product.name,
               price: product.price,
               discount: discount,
+              itemDiscount: itemDiscount,
             },
           ])
         }
       >
         Adicionar item
-      </button>
-    </div>
+      </Button>
+    </ContainerProductDiscount>
   );
 };
 

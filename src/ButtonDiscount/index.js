@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DisplayProduct from "../DisplayProduct";
+import { Button } from "@material-ui/core";
 
 const ButtonDiscount = ({ setCurrentSale, useProduct, currentSale }) => {
   const [id, setId] = useState(0);
@@ -14,7 +15,9 @@ const ButtonDiscount = ({ setCurrentSale, useProduct, currentSale }) => {
 
   return (
     <div>
-      <button onClick={handleDiscount}>Gerar Promoção</button>
+      <Button variant="contained" color="secondary" onClick={handleDiscount}>
+        Gerar Promoção
+      </Button>
       <DisplayProduct
         id={id}
         discount={discount}

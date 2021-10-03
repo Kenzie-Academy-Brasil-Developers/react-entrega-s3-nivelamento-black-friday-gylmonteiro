@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ButtonDiscount from "../ButtonDiscount";
 import Cart from "../Cart";
-import DisplayProduct from "../DisplayProduct";
 
 const FluxLogic = () => {
   const [useProduct, setProduct] = useState([
@@ -14,6 +13,8 @@ const FluxLogic = () => {
   ]);
 
   const [currentSale, setCurrentSale] = useState([]);
+
+  console.log(currentSale);
 
   return (
     <div>
