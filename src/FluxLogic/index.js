@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ButtonDiscount from "../ButtonDiscount";
+import Cart from "../Cart";
 import DisplayProduct from "../DisplayProduct";
 
 const FluxLogic = () => {
@@ -16,12 +17,13 @@ const FluxLogic = () => {
 
   return (
     <div>
+      <Cart currentSale={currentSale} setCurrentSale={setCurrentSale} />
       <ButtonDiscount
         setProduct={setProduct}
         setCurrentSale={setCurrentSale}
         useProduct={useProduct}
         currentSale={currentSale}
-      ></ButtonDiscount>
+      />
     </div>
   );
 };

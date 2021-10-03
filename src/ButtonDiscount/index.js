@@ -1,12 +1,7 @@
 import { useState } from "react";
 import DisplayProduct from "../DisplayProduct";
 
-const ButtonDiscount = ({
-  setCurrentSale,
-  setProduct,
-  useProduct,
-  currentSale,
-}) => {
+const ButtonDiscount = ({ setCurrentSale, useProduct, currentSale }) => {
   const [id, setId] = useState(0);
   const [discount, SetDiscount] = useState(0);
 

@@ -1,5 +1,4 @@
 const CardProduct = ({ product, setCurrentSale, currentSale, discount }) => {
-  console.log(currentSale);
   return (
     <div>
       <h1>{product.name}</h1>
